@@ -8,99 +8,97 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="w-[1200px] flex flex-col items-cente mx-auto">
-  <div class="mx-auto bg-indigo-100">
-    <!-- ヘッダー -->
-    <header class="w-[1200px] p-4 flex justify-center items-center">
-      <h1 class="text-3xl font-bold text-center">梅田</h1>
-    </header>
-    <!-- メイン -->
-    <main class="flex flex-col items-center text-xl">
-      <!-- 希望 -->
-      <div class="py-10">
-        <label for="preferenceSelect">▼どんなお店がいい？：</label>
-        <select id="preferenceSelect" class="border border-solid border-gray-300">
-          <option value="" selected disabled>選択してください</option>
-          <option value="安くてうまい店がいい">安くてうまい店がいい</option>
-          <option value="綺麗な店がいい">綺麗な店がいい</option>
-          <option value="お腹いっぱい食べたい">お腹いっぱい食べたい</option>
-        </select>
+<body class="max-w-[1200px] flex flex-col items-cente mx-auto bg-indigo-100">
+  <!-- ヘッダー -->
+  <header class="p-4">
+    <h1 class="text-3xl font-bold text-center">梅田</h1>
+  </header>
+  <!-- メイン -->
+  <main class="flex flex-col items-center text-xl">
+    <!-- 希望 -->
+    <div class="py-10 flex flex-col sm:flex-row items-center justify-center">
+      <label for="preferenceSelect" class="mb-2 sm:mr-2">▼どんなお店がいい？：</label>
+      <select id="preferenceSelect" class="border border-solid border-gray-300">
+        <option value="" selected disabled>選択してください</option>
+        <option value="安くてうまい店がいい">安くてうまい店がいい</option>
+        <option value="綺麗な店がいい">綺麗な店がいい</option>
+        <option value="お腹いっぱい食べたい">お腹いっぱい食べたい</option>
+      </select>
+    </div>
+    <!-- 飲み方 -->
+    <div class="pb-10 flex flex-col sm:flex-row items-center justify-center">
+      <label for="drinkTypeSelect" class="mb-2 sm:mr-2">▼立ち飲み？座って飲みたい？：</label>
+      <select id="drinkTypeSelect" class="border border-solid border-gray-300">
+        <option value="" selected disabled>選択してください</option>
+        <option value="立ち飲み">立ち飲み</option>
+        <option value="座り飲み">座り飲み</option>
+      </select>
+    </div>
+    <!-- 食べ物 -->
+    <div id="additionalOptions" style="display:none;"
+      class="pb-10 flex flex-col sm:flex-row items-center justify-center">
+      <label for="foodTypeSelect" id="foodTypeLabel" class="mb-2 sm:mr-2">▼なにが食べたい？：</label>
+      <select id="foodTypeSelect" class="border border-solid border-gray-300">
+        <option value="" selected disabled>選択してください</option>
+        <option value="焼き鳥が食べたい">焼き鳥が食べたい</option>
+        <option value="海鮮が食べたい">海鮮が食べたい</option>
+      </select>
+    </div>
+    <!-- ボタン -->
+    <div class="flex flex-col md:flex-row md:justify-center mb-10">
+      <button id="homeBtn" class="bg-blue-300 rounded-full text-gray-600 w-56 h-14 m-4 ">ホームに戻る</button>
+      <button id="recommendBtn" class="bg-yellow-400 rounded-full text-gray-600 w-56 h-14 m-4">おすすめはこれ</button>
+      <button id="reloadBtn" class="bg-red-300 rounded-full text-gray-600 w-56 h-14 m-4">やりなおす</button>
+    </div>
+    <p id="recommendation" class=" mb-5 text-2xl"></p>
+    <!-- 写真を表示する領域 -->
+    <div id="shopPhotoContainer" class="w-[400px] h-[500px] md:flex justify-center items-center">
+      <!-- 庶民の写真1 -->
+      <div class="shopPhotoItem hidden">
+        <img src="./img/syomin.jpg" alt="庶民">
       </div>
-      <!-- 飲み方 -->
-      <div class="pb-10">
-        <label for="drinkTypeSelect">▼立ち飲み？座って飲みたい？：</label>
-        <select id="drinkTypeSelect" class="border border-solid border-gray-300">
-          <option value="" selected disabled>選択してください</option>
-          <option value="立ち飲み">立ち飲み</option>
-          <option value="座り飲み">座り飲み</option>
-        </select>
+      <!-- 庶民の写真2 -->
+      <div class="shopPhotoItem hidden">
+        <img src="./img/syomin_2.jpg" alt="庶民">
       </div>
-      <!-- 食べ物 -->
-      <div id="additionalOptions" style="display:none;" class="pb-10">
-        <label for="foodTypeSelect" id="foodTypeLabel">▼なにが食べたい？：</label>
-        <select id="foodTypeSelect" class="border border-solid border-gray-300">
-          <option value="" selected disabled>選択してください</option>
-          <option value="焼き鳥が食べたい">焼き鳥が食べたい</option>
-          <option value="海鮮が食べたい">海鮮が食べたい</option>
-        </select>
+      <!-- 大富豪の写真1 -->
+      <div class="shopPhotoItem hidden">
+        <img src="./img/daihugou.jpg" alt="大富豪">
       </div>
-      <!-- ボタン -->
-      <div class="flex justify-center mb-10">
-        <button id="homeBtn" class="bg-blue-300 rounded-full text-gray-600 w-56 h-14 mx-4">ホームに戻る</button>
-        <button id="recommendBtn" class="bg-yellow-400 rounded-full text-gray-600 w-56 h-14 mx-4">おすすめはこれ</button>
-        <button id="reloadBtn" class="bg-red-300 rounded-full text-gray-600 w-56 h-14 mx-4">やりなおす</button>
+      <!-- 大富豪の写真2 -->
+      <div class="shopPhotoItem hidden">
+        <img src="./img/daihugou_2.jpg" alt="大富豪">
       </div>
-      <p id="recommendation" class=" mb-5 text-2xl"></p>
-      <div class="flex justify-center">
-        <!-- 写真を表示する領域 -->
-        <div id="shopPhotoContainer" class="w-[400px] h-[500px] flex justify-center items-center">
-          <!-- 庶民の写真1 -->
-          <div class="shopPhotoItem hidden">
-            <img src="./img/syomin.jpg" alt="庶民">
-          </div>
-          <!-- 庶民の写真2 -->
-          <div class="shopPhotoItem hidden">
-            <img src="./img/syomin_2.jpg" alt="庶民">
-          </div>
-          <!-- 大富豪の写真1 -->
-          <div class="shopPhotoItem hidden">
-            <img src="./img/daihugou.jpg" alt="大富豪">
-          </div>
-          <!-- 大富豪の写真2 -->
-          <div class="shopPhotoItem hidden">
-            <img src="./img/daihugou_2.jpg" alt="大富豪">
-          </div>
-          <!-- 兵蔵の写真1 -->
-          <div class="shopPhotoItem hidden">
-            <img src="./img/hyouzou.jpg" alt="兵蔵">
-          </div>
-          <!-- 兵蔵の写真2 -->
-          <div class="shopPhotoItem hidden">
-            <img src="./img/hyouzou_2.jpg" alt="兵蔵">
-          </div>
-          <!-- 謹賀の写真1 -->
-          <div class="shopPhotoItem hidden">
-            <img src="./img/kinga.jpg" alt="謹賀">
-          </div>
-          <!-- 謹賀の写真2 -->
-          <div class="shopPhotoItem hidden">
-            <img src="./img/kinga_2.jpg" alt="謹賀">
-          </div>
-          <!-- おか長の写真1 -->
-          <div class="shopPhotoItem hidden">
-            <img src="./img/okanaga.jpg" alt="おか長">
-          </div>
-          <!-- おか長の写真2 -->
-          <div class="shopPhotoItem hidden">
-            <img src="./img/okanaga_2.jpg" alt="おか長">
-          </div>
-        </div>
+      <!-- 兵蔵の写真1 -->
+      <div class="shopPhotoItem hidden">
+        <img src="./img/hyouzou.jpg" alt="兵蔵">
       </div>
-    </main>
-    <footer class="bg-gray-200">
-      <p class="text-xl font-bold text-center py-4">©なっちゃん</p>
-    </footer>
-  </div>
+      <!-- 兵蔵の写真2 -->
+      <div class="shopPhotoItem hidden">
+        <img src="./img/hyouzou_2.jpg" alt="兵蔵">
+      </div>
+      <!-- 謹賀の写真1 -->
+      <div class="shopPhotoItem hidden">
+        <img src="./img/kinga.jpg" alt="謹賀">
+      </div>
+      <!-- 謹賀の写真2 -->
+      <div class="shopPhotoItem hidden">
+        <img src="./img/kinga_2.jpg" alt="謹賀">
+      </div>
+      <!-- おか長の写真1 -->
+      <div class="shopPhotoItem hidden">
+        <img src="./img/okanaga.jpg" alt="おか長">
+      </div>
+      <!-- おか長の写真2 -->
+      <div class="shopPhotoItem hidden">
+        <img src="./img/okanaga_2.jpg" alt="おか長">
+      </div>
+    </div>
+  </main>
+  <!-- フッター -->
+  <footer class="bg-gray-200 fixed bottom-0 w-full">
+    <p class="text-xl font-bold text-center py-4">©なっちゃん</p>
+  </footer>
   <!--  jquery,JavaScriptの読み込み -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="js/umeda.js"></script>

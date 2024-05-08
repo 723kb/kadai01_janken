@@ -8,17 +8,17 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="w-[1200px] flex flex-col items-cente mx-auto">
+<body class="max-w-[1200px] flex flex-col items-cente mx-auto">
   <div>
     <!-- ヘッダー -->
-    <header class="p-4">
+    <header class="p-4" id="header">
       <h1 class="text-3xl font-bold text-center  ">あなたにおすすめの飲み屋診断</h1>
       <h2 class="text-2xl font-bold text-center my-4">IN　大阪</h2>
     </header>
     <!-- メインコンテンツ -->
-    <main class="">
+    <main>
       <!-- エリア選択 -->
-      <div class="">
+      <div>
         <p class="text-xl text-center my-4">まずはエリアを選んでね！</p>
         <p class="text-xl text-center my-4">エリアの説明は下にあるよ！</p>
         <div class="text-2xl text-center border-double pb-10">
@@ -30,53 +30,52 @@
             <option value="天王寺">天王寺</option>
             <option value="京橋">京橋</option>
           </select>
-
         </div>
       </div>
       <!-- エリア紹介 -->
       <div class="bg-indigo-100">
         <!-- 梅田 -->
-        <div class="sm:flex">
-          <div class="sm:w-1/2">
-            <img src="./img/umeda.jpg" alt="梅田">
+        <div class="md:flex">
+          <div class="md:w-1/2">
+            <img src="./img/umeda.jpg" alt="梅田" class="sm:w-screen ">
           </div>
-          <div class="sm:w-1/2 border border-solid border-gray-300 sm:border-0 flex flex-col justify-center">
+          <div class="md:w-1/2 border border-solid border-gray-300 md:border-0 flex flex-col justify-center">
             <h3 class="text-2xl font-bold text-center mb-8">梅田</h3>
             <p class="mx-10">梅田や北新地を中心した広域な繁華街は、「キタ」と呼ばれ、大阪では「ミナミ」と双璧を成す一大商業エリア。</p>
             <p class="mx-10 my-4">主な飲みスポットは、大阪駅前ビル、お初天神、北新地など。特に駅ビルは安く飲める店がたくさんある。</p>
           </div>
         </div>
         <!-- なんば -->
-        <div class="sm:flex">
-          <div class="sm:w-1/2 border border-solid border-gray-300 sm:border-0 flex flex-col justify-center">
+        <div class="md:flex">
+          <div class="md:w-1/2 border border-solid border-gray-300 md:border-0 flex flex-col justify-center">
             <h3 class="text-2xl font-bold text-center mb-8">なんば</h3>
             <p class="mx-10">梅田を中心とする「キタ」と並んで大阪における商業の中心地である。訪日外国人で賑わっている。</p>
             <p class="mx-10 my-4">主な飲みスポットは「裏なんば」「座裏」が有名。宗右衛門町（そえもんちょう）はぼったくり店が多い。
             </p>
           </div>
-          <div class="sm:w-1/2">
+          <div class="md:w-1/2">
             <img src="./img/namba.jpg" alt="なんば">
           </div>
         </div>
         <!-- 天王寺 -->
-        <div class="sm:flex">
-          <div class="sm:w-1/2">
+        <div class="md:flex">
+          <div class="md:w-1/2">
             <img src="./img/tennouji.jpg" alt="天王寺">
           </div>
-          <div class="sm:w-1/2 border border-solid border-gray-300 sm:border-0 flex flex-col justify-center">
+          <div class="md:w-1/2 border border-solid border-gray-300 md:border-0 flex flex-col justify-center">
             <h3 class="text-2xl font-bold text-center mb-8">天王寺</h3>
             <p class="mx-10">「キタ」「ミナミ」に次ぐ繁華街。日本で2番目に高いビルのあべのハルカスが象徴的。</p>
             <p class="mx-10 my-4">主な飲みスポットは「裏天王寺」、駅ビル。近くに西成もあり路地を1本入れば下町情緒残る街並みも。</p>
           </div>
         </div>
         <!-- 京橋 -->
-        <div class="sm:flex">
-          <div class="sm:w-1/2 border border-solid border-gray-300 sm:border-0 flex flex-col justify-center">
+        <div class="md:flex">
+          <div class="md:w-1/2 border border-solid border-gray-300 md:border-0 flex flex-col justify-center">
             <h3 class="text-2xl font-bold text-center mb-8">京橋</h3>
             <p class="mx-10">JR西日本大阪環状線・片町線（学研都市線）・JR東西線、京阪本線、Osaka Metro長堀鶴見緑地線が乗り入れる大阪屈指のターミナル駅。</p>
             <p class="mx-10 my-4">主な飲みスポットは駅周辺に数多く点在。サラリーマンが多いため安く飲める店が多い。
           </div>
-          <div class="sm:w-1/2">
+          <div class="md:w-1/2">
             <img src="./img/kyoubashi.jpeg" alt="京橋">
           </div>
         </div>
