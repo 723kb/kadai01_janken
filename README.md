@@ -8,7 +8,7 @@ kadai01_janken
 
 ## ③DEMO
 
-https://723kb.github.io/kadai_01_janken/
+https://723kb.github.io/kadai01_janken/
 
 ## ④作ったアプリケーション用のIDまたはPasswordがある場合
 
